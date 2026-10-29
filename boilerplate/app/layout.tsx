@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { BarreNavigation } from "@/components/common/barreNavigation";
+import { PiedPage } from "@/components/common/piedPage";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main>
           {children}
         </main>
+        <PiedPage/>
       </body>
     </html>
   );
