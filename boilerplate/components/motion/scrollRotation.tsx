@@ -9,6 +9,7 @@ interface ScrollRotationProps{
     children: React.ReactNode,
     className?: string
 }
+
 //Composant
 export function ScrollRotation({children, className}: ScrollRotationProps) {
 

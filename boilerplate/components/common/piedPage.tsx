@@ -61,11 +61,10 @@ const configurationPiedPage = {
 
 //Composant
 export function PiedPage() {
-
     //Variable
     const [anneeActuelle, setAnneeActuelle] = useState<number | null>(null);
 
-    //Changement au lancement du composant
+    //Chargement au lancement du composant
     useEffect(() => {
         setAnneeActuelle(new Date().getFullYear());
     }, []);
@@ -74,19 +73,23 @@ export function PiedPage() {
         <footer className="w-full border-t bg-muted/30 pt-10 pb-6">
             <div className="container mx-auto px-4">
 
+                {/* Haut du pied de page */}
                 <div className="flex flex-col md:flex-row jutify-between gap-10 pb-4">
 
+                    {/* Bloc de gauche : logo, texte et réseaux sociaux */}
                     <div  className="flex flex-col space-y-4 max-w-sm">
+                        {/* Nom entreprise */}
                         <span className="font-extrabold text-xl tracking-tight">
                             {configurationPiedPage.nomEntreprise}
                         </span>
+                        {/* Description */}
                         <p className="text-sm text-muted-foreground leading-relaxed">
                             {configurationPiedPage.description}
                         </p>
 
-                       <div className="flex space-x-4 pt-1">
-                            {configurationPiedPage.reseauxSociaux.map((unReseauSocial) =>
-                                
+                        {/* Réseaux sociaux */}
+                        <div className="flex space-x-4 pt-1">
+                            {configurationPiedPage.reseauxSociaux.map((unReseauSocial) =>    
                                 unReseauSocial.url ? (
                                     <a
                                         key={unReseauSocial.nom}
@@ -104,6 +107,7 @@ export function PiedPage() {
                         </div>
                     </div>
                     
+                    {/* Bloc de droite : colonnes de liens */}
                     <div className="flex flex-wrap gap-10 md:gap-20">
                         {configurationPiedPage.colonnes.map((uneColonne) => (
                             <div key={uneColonne.titre}>
@@ -123,12 +127,15 @@ export function PiedPage() {
                     </div>
                 </div>
 
+                {/* Bas du pied de page : copyright, mentions légales et confidentialité */}
                 <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
+                    {/* Copyright */}
                     <p className=" text-xs text-muted-foreground text-center sm:text-left">
                         © {anneeActuelle} {configurationPiedPage.nomEntreprise}. Tous droits réservés.
                     </p>
 
                     <div className="flex space-x-6">
+                        {/* Mentions légales */}
                         <Dialog>
                             <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
                                 Mentions Légales
@@ -143,6 +150,7 @@ export function PiedPage() {
                             </DialogContent>
                         </Dialog>
 
+                        {/* Confidentialité */}
                         <Dialog>
                             <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
                                 Confidentialité
