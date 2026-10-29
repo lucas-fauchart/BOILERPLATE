@@ -53,19 +53,19 @@ const configurationPiedPage = {
     ],
 
     textesLegaux: {
-        mentionsLegales:
-            "Ce site est édité par la société [Nom]. Capital social de 1000€. Siège social : [Adresse]. Directeur de la publication : [Nom]. Hébergé par [Nom hébergeur], [Adresse hébergeur], [Ville hébergeur], [Code postal hébergeur], [Pays hébergeur].",
+        mentionsLegales: "Ce site est édité par la société [Nom]. Capital social de 1000€. Siège social : [Adresse]. Directeur de la publication : [Nom]. Hébergé par [Nom hébergeur], [Adresse hébergeur], [Ville hébergeur], [Code postal hébergeur], [Pays hébergeur].",
 
-        confidentialite:
-            "Nous collectons vos données uniquement via le formulaire de contact pour répondre à vos demandes. Vos données ne sont jamais vendues ni partagées à des tiers. Vous disposez d'un droit d'accès et de suppression sur simple demande par email.",
+        confidentialite: "Nous collectons vos données uniquement via le formulaire de contact pour répondre à vos demandes. Vos données ne sont jamais vendues ni partagées à des tiers. Vous disposez d'un droit d'accès et de suppression sur simple demande par email.",
     },
 };
 
 //Composant
 export function PiedPage() {
 
+    //Variable
     const [anneeActuelle, setAnneeActuelle] = useState<number | null>(null);
 
+    //Changement au lancement du composant
     useEffect(() => {
         setAnneeActuelle(new Date().getFullYear());
     }, []);
@@ -107,7 +107,7 @@ export function PiedPage() {
                     <div className="flex flex-wrap gap-10 md:gap-20">
                         {configurationPiedPage.colonnes.map((uneColonne) => (
                             <div key={uneColonne.titre}>
-                                <h3 className="text-sm font+bold uppercase tracking-wider mb-4">{uneColonne.titre}</h3>
+                                <h3 className="text-sm font-bold uppercase tracking-wider mb-4">{uneColonne.titre}</h3>
                                 <ul className="space-y-2.5">
                                     {uneColonne.categories.map((uneCategorie) => (
                                         <li key={uneCategorie.label}>
