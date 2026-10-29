@@ -5,8 +5,12 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import { cn } from "@/lib/utils"
 
+interface ScrollRotationProps{
+    children: React.ReactNode,
+    className?: string
+}
 //Composant
-export function ScrollRotation({children, className}: { children: React.ReactNode; className?: string }) {
+export function ScrollRotation({children, className}: ScrollRotationProps) {
 
     //Variable
     const conteneurRef = useRef(null)
