@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <BarreNavigation/>
         <main>
-          {children}
+          {children} 
         </main>
         <ApparitionFonduHautProps>
           <PiedPage/>
