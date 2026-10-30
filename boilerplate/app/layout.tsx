@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { BarreNavigation } from "@/components/common/barreNavigation";
 import { PiedPage } from "@/components/common/piedPage";
+import { ApparitionFonduHautProps } from "@/components/motion/apparitionFonduHaut";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -31,9 +32,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <BarreNavigation/>
         <main>
-          {children}
+          {children} 
         </main>
-        <PiedPage/>
+        <ApparitionFonduHautProps>
+          <PiedPage/>
+        </ApparitionFonduHautProps> 
       </body>
     </html>
   );
