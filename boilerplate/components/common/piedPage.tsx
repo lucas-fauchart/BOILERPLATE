@@ -95,10 +95,10 @@ export function PiedPage() {
                                         key={unReseauSocial.nom}
                                         href={unReseauSocial.url}
                                         target="_blank"
-                                        rel="noopener noreferrer"
+                                        rel="noreferrer"
                                         aria-label={unReseauSocial.nom}
                                         title={unReseauSocial.nom}
-                                        className="text-muted-foreground transition-colors hover:text-primary"
+                                        className="text-muted-foreground transition-all hover:text-primary duration-200 hover:scale-110 active:scale-95 ease-out cursor-pointer"
                                     >
                                         <unReseauSocial.Icone className="h-5 w-5" />
                                     </a>
@@ -115,8 +115,9 @@ export function PiedPage() {
                                 <ul className="space-y-2.5">
                                     {uneColonne.categories.map((uneCategorie) => (
                                         <li key={uneCategorie.label}>
-                                            <Link href={uneCategorie.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                            <Link href={uneCategorie.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors relative pb-1 block w-fit duration-200 group/link">
                                                 {uneCategorie.label}
+                                                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
                                             </Link>
                                         </li>
                                     ))}

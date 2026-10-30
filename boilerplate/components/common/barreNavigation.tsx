@@ -36,7 +36,7 @@ export function BarreNavigation(){
 
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-2 font-extrabold text-xl tracking-tight">
-                    <span>Logo</span>
+                    <span>DevWeb</span>
                 </Link>
 
                 {/* Navigation PC */}
