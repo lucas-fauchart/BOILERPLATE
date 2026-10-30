@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollRotation } from "@/components/motion/scrollRotation"
 import { FlottementItem } from "@/components/motion/flottementItem"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function Introduction() {
     return(
@@ -12,34 +13,34 @@ export function Introduction() {
            
             {/*Côté gauche*/}
             <div className="flex flex-col space-y-6 max-w-xl text-center md:text-left z-10">
-                <div className="inline-flex items-center mx-auto md:mx-0 w-fit gap-2 px-3 py-1 rounded-full border bg-background/50 text-xs font-medium text-muted-foreground shadow-sm">
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{duration: 0.4, delay: 0.2, ease: "easeOut" }} className="inline-flex items-center mx-auto md:mx-0 w-fit gap-2 px-3 py-1 rounded-full border bg-background/50 text-xs font-medium text-muted-foreground shadow-sm">
                     <Sparkles className="w-3.5 h-3.5 text-primary"/>
                     <span>Nouveau site disponible</span>
-                </div>
+                </motion.div>
 
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
+                <motion.h1 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }} className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
                     Créer un site web <br/>
                     <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-tansparent">
                         unique et sur-mesure
                     </span>
-                </h1>
+                </motion.h1>
 
-                <p className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
+                <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }} className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
                     Une structure robuste, responsive et ultra-rapide conçue de vos propres mains pour propulser l'activité de vos clients.
-                </p>
+                </motion.p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
-                    <Button size="lg" className="gap-2 h-12 px-6 text-base">
-                        Commencer le projet <ArrowRight className="w-5 h-5"/>
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                    <Button size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
+                        Commencer le projet <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
                     </Button>
                     <Button size="lg" variant="outline" className="h-12 px-6 text-base">
                         Voir nos réalisations
                     </Button>
-                </div>
+                </motion.div>
             </div>
 
             {/*Côté droite*/}
-            <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }} className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] flex items-center justify-center mt-16 md:mt-16">
                 <ScrollRotation className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 z-10">
                     <img 
                         src="/images/image-scroll-rotation.png" 
@@ -79,7 +80,7 @@ export function Introduction() {
                         className="w-full h-wull object-contain drop-shadow-md rotate-[15deg]"
                     />
                 </FlottementItem>
-            </div>
+            </motion.div>
         </section>
     )
 }

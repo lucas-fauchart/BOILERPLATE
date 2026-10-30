@@ -45,9 +45,10 @@ export function BarreNavigation(){
                         {categories.map((uneCategorie, index) => (
                             <motion.div key={uneCategorie.label} initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut"}}> 
                                 <NavigationMenuItem> 
-                                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                    <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} relative bg-transparent hover:bg-tranparent text-muted-foreground hover:text-foreground transition-colors cursor-pointer py-2 group/link`}>
                                         <Link href={uneCategorie.href}>
                                             {uneCategorie.label}
+                                            <span className="absolute bottom-1 left-2 right-2 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-center ease-out"/>
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
@@ -58,8 +59,8 @@ export function BarreNavigation(){
 
                 {/* Bouton d'action PC */}
                 <motion.div className="hidden md:flex items-center" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3, delay: 0.4}}>
-                    <Button size="sm" className="gap-2">
-                        Demander un devis <ArrowRight className="w-4 h-4"/>
+                    <Button size="sm" className="gap-2 p-4 group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
+                        Demander un devis <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
                     </Button>
                 </motion.div>
 
