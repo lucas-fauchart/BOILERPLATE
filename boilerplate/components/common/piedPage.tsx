@@ -117,7 +117,7 @@ export function PiedPage() {
                                         <li key={uneCategorie.label}>
                                             <Link href={uneCategorie.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors relative pb-1 block w-fit duration-200 group/link">
                                                 {uneCategorie.label}
-                                                <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
+                                                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
                                             </Link>
                                         </li>
                                     ))}
