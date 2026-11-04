@@ -59,7 +59,7 @@ export function Contact(){
                 </motion.div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Coordonnées de l'agence */}
                 <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="space-y-8">
@@ -132,7 +132,7 @@ export function Contact(){
                             </div>
 
                             {/* Email et date naissance */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 min-[590px]:grid-cols-2 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Email</label>
                                     <Input type="email" placeholder="jean.dupont@email.com" required className="h-10 bg-background text-sm"/>

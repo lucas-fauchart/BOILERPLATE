@@ -6,13 +6,13 @@ import React from "react"
 import { ArrowRight, Menu } from "lucide-react"
 import { motion } from "framer-motion"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 
 //Liste des catégories
 const categories = [
     { label: "Accueil", href: "/" },
-    { label: "Prestation", href:"#prestation" },
+    { label: "Prestation", href:"/#prestation" },
     { label: "A propos", href:"/a-propos" },
     { label: "Contact", href:"/contact" }
 ]
@@ -67,13 +67,12 @@ export function BarreNavigation(){
                             <nav className="flex flex-col space-y-3 mt-6">
                                 {categories.map((uneCategorie, index ) => (
                                     <motion.div key={uneCategorie.label} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 260, damping: 22, delay: index * 0.10 }}>
-
-                                    
-                                        <Link href={uneCategorie.href} className="text-lg font-medium transition-colors hover:text-primary py-2 pl-4 block border-b border-muted/50 relative block w-fit group/mobile-link">
-                                            {uneCategorie.label}
-                                            <span className="absolute bottom-1 left-4 right-0 h-[2px] bg-primary scale-x-0 group-hover/mobile-link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
-                                        </Link>
-                                        
+                                        <SheetClose asChild>
+                                            <Link href={uneCategorie.href} className="text-lg font-medium transition-colors hover:text-primary py-2 pl-4 relative block w-fit group/mobile-link">
+                                                {uneCategorie.label}
+                                                <span className="absolute bottom-1 left-4 right-0 h-[2px] bg-primary scale-x-0 group-hover/mobile-link:scale-x-100 transition-transform duration-300 origin-left ease-out"/>
+                                            </Link>
+                                        </SheetClose>
                                     </motion.div>
                                 ))}
                                 <motion.div className="pt-6 mx-auto" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: 0.5 }}>

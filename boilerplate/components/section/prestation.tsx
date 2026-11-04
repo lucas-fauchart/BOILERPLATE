@@ -35,11 +35,11 @@ const configurationPrestation = {
 //Composant
 export function Prestation(){
     return(
-        <section id="prestation" className="w-full py-20 bg-background border-t">
+        <section id="prestation" className="w-full py-20 bg-background border-t scroll-mt-12">
             <div className="container mx-auto max-w-6xl px-4">
 
                 {/* En tête de section */}
-                <motion.div initial={{ opacity: 0, y: -10 }} whileInView={{ opacity: 1, y: -10 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-4">
+                <motion.div initial={{ opacity: 0, y: -15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-4">
                     <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
                         {configurationPrestation.titre}
                     </h2>
