@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 //Composant
 export function Introduction() {
     return(
-        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-48 py-16 md:py-12 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-48 py-14 md:py-12 overflow-hidden bg-gradient-to-b from-background to-muted/20">
            
             {/*Côté gauche*/}
             <div className="flex flex-col space-y-6 max-w-xl text-center md:text-left z-10">
