@@ -48,7 +48,7 @@ export function BarreNavigation(){
 
                 {/* Bouton d'action PC */}
                 <motion.div className="hidden md:flex items-center" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3, delay: 0.4}}>
-                    <Button size="sm" className="gap-2 p-4 group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
+                    <Button size="sm" className="gap-2 p-4 group/btn relative overflow-hidden transition-all duration-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
                         Demander un devis <ArrowRight className="w-4 h-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
                     </Button>
                 </motion.div>
@@ -77,7 +77,7 @@ export function BarreNavigation(){
                                     </motion.div>
                                 ))}
                                 <motion.div className="pt-6 mx-auto" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: 0.5 }}>
-                                    <Button className="w-full gap-2 px-6">
+                                    <Button className="w-full gap-2 px-6 active:scale-95">
                                         Demander un devis <ArrowRight className="w-4 h-4"/>
                                     </Button>
                                 </motion.div>
