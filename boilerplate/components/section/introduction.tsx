@@ -7,9 +7,10 @@ import { FlottementItem } from "@/components/motion/flottementItem"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 
+//Composant
 export function Introduction() {
     return(
-        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-48 py-12 overflow-hidden bg-gradient-to-b from-background to-muted/20">
+        <section className="relative min-h-[calc(100vh-64px)] w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-48 py-16 md:py-12 overflow-hidden bg-gradient-to-b from-background to-muted/20">
            
             {/*Côté gauche*/}
             <div className="flex flex-col space-y-6 max-w-xl text-center md:text-left z-10">
@@ -33,7 +34,7 @@ export function Introduction() {
                     <Button size="lg" className="gap-2 h-12 px-6 text-base group/btn relative overflow-hidden transition-all duratio-300 horver:shadow-[0_0_20px_rgba(var(--primary), 0.30)] active:scale-95">
                         Commencer le projet <ArrowRight className="w-5 h-5 transition-transform duration-300 ease-out group-hover/btn:translate-x-1"/>
                     </Button>
-                    <Button size="lg" variant="outline" className="h-12 px-6 text-base">
+                    <Button size="lg" variant="outline" className="h-12 px-6 text-base active:scale-95">
                         Voir nos réalisations
                     </Button>
                 </motion.div>
