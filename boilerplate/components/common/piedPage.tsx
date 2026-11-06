@@ -2,6 +2,7 @@
 
 //Importation
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react";
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
@@ -63,6 +64,8 @@ const configurationPiedPage = {
 export function PiedPage() {
     //Variable
     const [anneeActuelle, setAnneeActuelle] = useState<number | null>(null);
+    const pathname = usePathname()
+    const estSurPageAdmin = pathname === "/admin"
 
     //Chargement au lancement du composant
     useEffect(() => {
@@ -135,7 +138,7 @@ export function PiedPage() {
                         © {anneeActuelle} {configurationPiedPage.nomEntreprise}. Tous droits réservés.
                     </p>
 
-                    <div className="flex space-x-6">
+                    <div className="flex items-center space-x-6">
                         {/* Mentions légales */}
                         <Dialog>
                             <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
@@ -151,6 +154,8 @@ export function PiedPage() {
                             </DialogContent>
                         </Dialog>
 
+                        <span className="text-muted-foreground/40 hidden sm:inline">·</span>
+
                         {/* Confidentialité */}
                         <Dialog>
                             <DialogTrigger className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
@@ -165,6 +170,16 @@ export function PiedPage() {
                                 </DialogHeader>
                             </DialogContent>
                         </Dialog>
+
+                        {!estSurPageAdmin && (
+                            <>
+                                <span className="text-muted-foreground/40 hidden sm:inline">·</span>
+
+                                <Link href="/admin" className="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">
+                                    Espace Admin
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
