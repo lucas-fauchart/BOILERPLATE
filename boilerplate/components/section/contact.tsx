@@ -39,7 +39,6 @@ export function Contact(){
         setEstEnvoye(true)
     }
 
-
     useEffect(() => {
         setDateDuJour(new Date());
     }, [])
